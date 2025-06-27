@@ -1,9 +1,9 @@
 EE_OBJS = geometry.o
 EE_BIN = geometry.elf
 
-EE_INCS = -I/usr/local/include
-EE_LDFLAGS = -L/usr/local/lib
-EE_LIBS = -lSDL3
+EE_INCS = -I/usr/local/include -L$(GSKIT)/include
+EE_LDFLAGS = -L/usr/local/lib -L$(GSKIT)/lib
+EE_LIBS = -lSDL3 -lgskit
 
 all: $(EE_BIN)
 
