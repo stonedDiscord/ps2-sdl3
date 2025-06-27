@@ -3,6 +3,7 @@ EE_BIN = geometry.elf
 
 EE_INCS = -I/usr/local/include
 EE_LDFLAGS = -L/usr/local/lib
+EE_LIBS = -lSDL3
 
 all: $(EE_BIN)
 
