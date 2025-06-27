@@ -1,0 +1,39 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ps2dev/ps2dev:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout tools repo
+        uses: actions/checkout@v4
+        with:
+          repository: libsdl-org/SDL
+          path: SDL
+
+      - name: Install build tools
+        run: |
+          apk add build-base git bash cmake
+
+      - name: Compile SDL
+        working-directory: SDL
+        run: |
+          cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$PS2DEV/ps2sdk/ps2dev.cmake
+          cmake --build build
+          cmake --install build
+
+      - name: Compile Example
+        run: |
+          make
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ps2sdk-supertux
+          path: supertux.elf
+    
+    
