@@ -1,7 +1,8 @@
 EE_OBJS = geometry.o
 EE_BIN = geometry.elf
 
-EE_INCS = -ISDL/include
+EE_INCS = -I/usr/local/include
+EE_LDFLAGS = -L/usr/local/lib
 
 all: $(EE_BIN)
 
