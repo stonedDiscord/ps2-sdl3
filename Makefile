@@ -3,7 +3,13 @@ EE_BIN = geometry.elf
 
 EE_INCS = -I/usr/local/include -L$(GSKIT)/include
 EE_LDFLAGS = -L/usr/local/lib -L$(GSKIT)/lib
-EE_LIBS = -lSDL3 -lgskit -ldmakit -lm -lcdvd -lmc -lc -lstdc++
+EE_LIBS = -lSDL3 -lgskit -ldmakit -lpad -lm -lcdvd -lmc -lc -lstdc++
+
+# This is for the sbv patch
+SBVLITE = $(PS2SDK)/sbv
+EE_INCS += -I$(SBVLITE)/include
+EE_LDFLAGS += -L$(SBVLITE)/lib
+EE_LIBS += -lpatches
 
 all: $(EE_BIN)
 
