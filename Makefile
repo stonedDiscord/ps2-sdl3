@@ -3,7 +3,7 @@ EE_BIN = geometry.elf
 
 EE_INCS = -I/usr/local/include -L$(GSKIT)/include
 EE_LDFLAGS = -L/usr/local/lib -L$(GSKIT)/lib
-EE_LIBS = -lSDL3 -lgskit
+EE_LIBS = -lSDL3 -lgskit -ldmakit -lm -lcdvd -lmc -lc -lstdc++
 
 all: $(EE_BIN)
 
