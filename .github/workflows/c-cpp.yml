@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ps2sdk-supertux
-          path: supertux.elf
+          name: ps2-sdl3-geometry
+          path: geometry.elf
     
     
