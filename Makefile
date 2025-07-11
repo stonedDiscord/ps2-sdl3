@@ -1,8 +1,8 @@
 EE_OBJS = geometry.o
 EE_BIN = geometry.elf
 
-EE_INCS = -I/usr/local/include -L$(GSKIT)/include
-EE_LDFLAGS = -L/usr/local/lib -L$(GSKIT)/lib
+EE_INCS = -I/usr/local/include -L$(GSKIT)/include -I/usr/local/ps2dev/ps2sdk/ports/include
+EE_LDFLAGS = -L/usr/local/lib -L$(GSKIT)/lib -L/usr/local/ps2dev/ps2sdk/ports/lib
 EE_LIBS = -lSDL3 -lps2_drivers -lgskit -ldmakit -laudsrv -lpad -lmtap -lm -lcdvd -lmc -lc -lstdc++
 
 EE_IRX_SRCS = $(addsuffix _irx.c, $(basename $(EE_IRX_FILES)))
