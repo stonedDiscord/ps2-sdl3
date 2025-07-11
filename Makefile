@@ -3,7 +3,7 @@ EE_BIN = geometry.elf
 
 EE_INCS = -I/usr/local/include -L$(GSKIT)/include
 EE_LDFLAGS = -L/usr/local/lib -L$(GSKIT)/lib
-EE_LIBS = -lSDL3 -lgskit -ldmakit -laudsrv -lpad -lm -lcdvd -lmc -lc -lstdc++
+EE_LIBS = -lSDL3 -lgskit -ldmakit -laudsrv -lpad -lmtap -lm -lcdvd -lmc -lc -lstdc++
 
 EE_IRX_SRCS = $(addsuffix _irx.c, $(basename $(EE_IRX_FILES)))
 EE_IRX_OBJS = $(addsuffix _irx.o, $(basename $(EE_IRX_FILES)))
