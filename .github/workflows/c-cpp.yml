@@ -19,6 +19,14 @@ jobs:
         run: |
           apk add build-base git bash cmake
 
+      - name: Install ps2_drivers lib
+        run: |
+          git clone https://github.com/fjtrujy/ps2_drivers.git
+          cd ps2_drivers
+          make -j $(getconf _NPROCESSORS_ONLN) clean
+          make -j $(getconf _NPROCESSORS_ONLN)
+          make -j $(getconf _NPROCESSORS_ONLN) install
+
       - name: Compile SDL
         working-directory: SDL
         run: |
